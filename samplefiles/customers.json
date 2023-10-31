@@ -1,0 +1,32 @@
+[
+ {
+   "customerid": 1,
+   "name": "onur",
+   "surname": "yilmaz",
+   "choice": 44,
+   "selections":{
+    "food":"pizza",
+    "drink":"coke"
+   }
+ },
+ {
+   "customerid": 2,
+   "name": "john",
+   "surname": "doe",
+   "choice": 33,
+   "selections":{
+    "food":"burger",
+    "drink":"beer"
+   }
+ },
+ {
+   "customerid": 3,
+   "name": "tim",
+   "surname": "cook",
+   "choice": 33,
+   "selections":{
+    "food":"pasta",
+    "drink":"coke"
+   }
+ }
+]
