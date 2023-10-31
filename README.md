@@ -25,8 +25,8 @@ This project is a proof of concept for MySuperDataCompany Inc. It allows users t
 ## Technical Stack
 
 - **Backend:** Python, Django
-- **Database:** PostgreSQL (for storing meta data)
-- **Data Querying:** pandasql
+- **Database:** PostgreSQL
+- **Data Querying:** Django Object Model
 
 ## Installation
 
