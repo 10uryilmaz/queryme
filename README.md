@@ -36,14 +36,14 @@ This project is a proof of concept for MySuperDataCompany Inc. It allows users t
 4. Use docker compose to set up and run the environment.
     `docker-compose up`
 
-## Sample Files
+### Sample Files
 
 You can find some sample files to test the application:
 
 - [customers.json](samplefiles/customers.json)
 - [customers.csv](samplefiles/customers.csv)
 
-- ## Usage
+## Usage
 
 ### Web UI
 
