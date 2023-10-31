@@ -89,7 +89,7 @@ The Admin Panel provides an interface to manage the contents of uploaded files.
 - File Overwriting: Each time a new file is uploaded, it replaces the previously stored data. Consequently, users should be aware that prior upload contents are not preserved and will be permanently lost upon subsequent file submissions.
 - File Size and Data Retrieval: The project was primarily developed as a proof of concept (POC) leveraging the Django Object Model. With this architectural choice:
   - There's a potential for substantial memory usage when dealing with large data sets.
-  - Neither the web interface nor the user interface has pagination features. Therefore, client applications accessing these interfaces could experience performance issues or even failures if data retrieval operations return extensive data sets.
+  - Neither the web interface nor the api has pagination features. Therefore, client applications accessing these interfaces could experience performance issues or even failures if data retrieval operations return extensive data sets.
 
 ## Contributing
 
