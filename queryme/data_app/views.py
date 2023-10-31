@@ -28,7 +28,7 @@ def handle_uploaded_file(uploaded_file):
         UploadedData.objects.all().delete()
 
     for record in parsed_data:
-        record['table_name'] = file_name  # Include table_name in each record
+        record['table_name'] = file_name
         UploadedData.objects.create(data=record)
 
     return True
@@ -68,9 +68,9 @@ def query_data_view(request):
     """View for querying the uploaded data via the web interface."""
     all_data = UploadedData.objects.all().values_list('data', flat=True)
     if request.method == 'POST':
-        query_type = request.POST.get('type')  # Changed from 'query'
+        query_type = request.POST.get('type')
         try:
-            result = execute_query(query_type)  # Assuming you want to pass the 'type' value to the `execute_query` function
+            result = execute_query(query_type) 
             return render(request, 'query.html', {'query_result': result, 'data_objects': all_data})
         except Exception as e:
             return render(request, 'query.html', {'error': f"Error processing query: {e}", 'data_objects': all_data})
@@ -95,16 +95,14 @@ class FileQueryAPI(APIView):
             except Exception as e:
                 return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-            # Check if 'type' is provided (Changed from 'query')
             query_type = serializer.validated_data.get('type', None)
             if query_type:
                 try:
-                    query_result = execute_query(query_type) # Assuming you want to pass the 'type' value to the `execute_query` function
+                    query_result = execute_query(query_type)
                     return Response({"query_result": query_result}, status=status.HTTP_200_OK)
                 except Exception as e:
                     return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
             else:
-                # If no type is provided, retrieve all stored data and return it
                 all_data = UploadedData.objects.all().values_list('data', flat=True)
                 return Response({"data": list(all_data)}, status=status.HTTP_200_OK)
 
